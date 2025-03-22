@@ -1,99 +1,622 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misael Vasquez - Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Misael Vásquez - Portfolio</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+                publicKey: "liYWBp2FY66tskhf7",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_b0zc5yj', 'template_tc9bqtp', this)
+                    .then(() => {
+
+                        alert('Message sent!');
+                        console.log('Message sent!');
+                        document.getElementById("contact-form").reset();
+
+                    }, (error) => {
+                        alert('Error sending email');
+                        console.log('FAILED...', error);
+                    });
+            });
         }
-        header {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #333;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            padding: 5px 0;
-        }
-        .contact a {
-            color: #333;
-            text-decoration: none;
-        }
-    </style>
+    </script>
 </head>
-<body>
-    <header>
-        <h1>Misael Vasquez</h1>
-        <p>Highly Skilled Software Engineer</p>
+
+<body class="index-page">
+
+    <header id="header" class="header dark-background d-flex flex-column">
+        <i class="header-toggle d-xl-none bi bi-list"></i>
+
+        <div class="profile-img">
+            <img src="assets/img/profilepic.jpg" alt="" class="img-fluid rounded-circle">
+        </div>
+
+        <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="assets/img/logo.png" alt=""> -->
+            <h1 class="sitename">Misael Vásquez</h1>
+        </a>
+
+        <div class="social-links text-center">
+            <a target="_blank" href="https://www.linkedin.com/in/misael-vasquez-b8724a169/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a target="_blank" href="https://www.facebook.com/mv.musiik" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a target="_blank" href="https://www.x.com/" class="twitter"><i class="bi bi-twitter-x"></i></a>
+            <a target="_blank" href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
+
+        </div>
+
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Welcome</a></li>
+                <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>                
+                <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+                <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+            </ul>
+        </nav>
+
     </header>
-    
-    <div class="container">
-        <div class="section">
-            <h2>About Me</h2>
-            <p>Highly skilled Software Engineer with over 10 years of experience in developing scalable solutions. Expertise in backend technologies like C#, ASP.NET, ASP.NET Core, MVC, Blazor, and RESTful services. Proficient in front-end technologies including Angular 2+, TypeScript, Bootstrap, HTML, CSS, and JavaScript. Strong experience with Microsoft Azure and databases such as SQL Server and Oracle.</p>
+
+    <main class="main">
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero section dark-background">
+
+            <img src="assets/img/background.jpeg" alt="" data-aos="fade-in" class="">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h1 class="welcome">Welcome.</h1>
+                <p>My name is Misael Vásquez.</p>
+                <p>I'm  <span class="typed" data-typed-items="a Software Engineer.,a .NET Developer.,an Angular Developer.">a Software Engineer.</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            </div>
+
+        </section><!-- /Hero Section -->
+        <!-- About Section -->
+        <section id="about" class="about section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>About</h2>
+                <p>
+                    I'm a highly skilled Software Engineer with over 10 years of experience in developing scalable solutions.
+                    Expertise in backend technologies such as, C#, ASP.NET, ASP.NET Core, MVC, Blazor, and RESTful services as well as proficiency in front-end technologies such as Angular 2+, TypeScript, Bootstrap, HTML, CSS, and JavaScript.
+                    Deep knowledge and experience working with cloud solutions such as Microsoft Azure and Database experience with SQL Server and Oracle. Developed efficient and robust software solutions for stock exchanges, insurance companies, and other financial institutions.
+                </p>
+            </div><!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row gy-4 justify-content-center">
+
+                    <div class="col-lg-12 content">
+                        <h2 class="about-header">Software Engineer | Full Stack Web Developer.</h2>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>12 Oct 1988</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span><a href="https://mvasquezgh.github.io/portfolio/">Portfolio </a></span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span><a href="tel:18493432980">1 849 343 2980 </a></span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Santo Domingo, Dominican Republic</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>36</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor's degree</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span><a href="mailto:mvasquezrd@outlook.com">mvasquezrd@outlook.com</a></span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="py-3">
+                            Beyond business, I like to share time with my family, I love Baseball and like to expand my knowledge and challenge new frontiers.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section><!-- /About Section -->
+        <!-- Skills Section -->
+        <section id="skills" class="skills section light-background">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Skills</h2>
+                <p>
+                    “Always excited to explore and adapt to new technologies.”.
+
+                </p>
+            </div><!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row skills-content skills-animation">
+
+                    <div class="col-lg-6">
+                        <div class="progress">
+                            <span class="skill"><span>.NET</span> <i class="val">99%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <span class="skill"><span>C#</span> <i class="val">99%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill"><span>SQL Server</span> <i class="val">99%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill"><span>Microsoft Azure</span> <i class="val">95%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <span class="skill"><span>Azure DevOps</span> <i class="val">95%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill"><span>Azure Service Bus</span> <i class="val">95%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill"><span>Azure Functions</span> <i class="val">95%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill"><span>ASP.NET / ASP.NET Core</span> <i class="val">99%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill"><span>ASP.NET MVC</span> <i class="val">99%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <span class="skill"><span>GIT</span> <i class="val">95%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <span class="skill"><span>Entity Framework</span> <i class="val">99%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="progress">
+                            <span class="skill"><span>Web Services</span> <i class="val">99%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="progress">
+                            <span class="skill"><span>PL/SQL Oracle</span> <i class="val">95%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill"><span>REST API</span> <i class="val">99%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <!-- Repeat for remaining skills: jQuery, SSRS, SSIS, Crystal Reports, IIS Configurations, Azure DevOps, GIT, PowerShell, etc. -->
+
+                    </div>
+
+                    <div class="col-lg-6">
+
+
+                        <div class="progress">
+                            <span class="skill"><span>Angular 2+</span> <i class="val">99%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill"><span>TypeScript</span> <i class="val">99%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill"><span>Blazor</span> <i class="val">99%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="progress">
+                            <span class="skill"><span>Unit Testing</span> <i class="val">99%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="progress">
+                            <span class="skill"><span>SSRS</span> <i class="val">99%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill"><span>SSIS</span> <i class="val">95%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill"><span>Crystal Reports</span> <i class="val">97%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill"><span>IIS Configurations</span> <i class="val">99%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill"><span>Web Forms</span> <i class="val">95%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <span class="skill"><span>jQuery</span> <i class="val">95%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <span class="skill"><span>PowerShell</span> <i class="val">95%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section><!-- /Skills Section -->
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio section light-background">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Projects</h2>
+                <p>Some of the software solutions I have worked on during my career.</p>
+            </div><!-- End Section Title -->
+
+            <div class="container">
+
+                <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+                    <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                        <li data-filter="*" class="filter-active">All</li>
+                        <li data-filter=".filter-app">Angular</li>
+                        <li data-filter=".filter-branding">.NET</li>
+                        <li data-filter=".filter-more">More</li>
+                    </ul><!-- End Portfolio Filters -->
+
+                    <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                            <div class="portfolio-content h-100">
+                                <img src="assets/img/puntoventa.png" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>Punto de venta</h4>
+                                    <p>Punto de venta</p>
+                                    <a href="assets/img/puntoventa.png" title="Punto de venta" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                    <a href="http://pos.simplencf.com/login" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                                </div>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                            <div class="portfolio-content h-100">
+                                <img src="assets/img/autoimport.png" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>Auto import</h4>
+                                    <p>Auto import</p>
+                                    <a href="assets/img/autoimport.png" title="Punto de venta" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                    <!--<a href="http://pos.simplencf.com/login" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>-->
+                                </div>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                            <div class="portfolio-content h-100">
+                                <img src="assets/img/simplencf.png" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>Simple NCF</h4>
+                                    <p>Simple NCF</p>
+                                    <a href="assets/img/simplencf.png" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                    <a href="http://www.simplencf.com/Login/Login" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                                </div>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                            <div class="portfolio-content h-100">
+                                <img src="assets/img/clportal.png" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>Cl Portal - StateTrust Life and Annuities</h4>
+                                    <p>Cl Portal - StateTrust Life and Annuities</p>
+                                    <a href="assets/img/clportal.png" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                    <a href="https://clportal.statetrustlife.com" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                                </div>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                            <div class="portfolio-content h-100">
+                                <img src="assets/img/vo.png" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>Virtual Office - StateTrust Life and Annuities</h4>
+                                    <p>Virtual Office - StateTrust Life and Annuities</p>
+                                    <a href="assets/img/vo.png" title="Simple NCF" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                    <a href="http://virtualofficeagents.statetrustlife.com/agentssite" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                                </div>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-more">
+                            <div class="portfolio-content h-100">
+                                <img src="assets/img/more.png" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>More+</h4>
+                                    <p>There are more internal web solutions that I contributed during my career.</p>
+                                    <a href="assets/img/more.png" title="More" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                    <!--<a href="http://virtualofficeagents.statetrustlife.com/agentssite" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>-->
+                                </div>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                    </div><!-- End Portfolio Container -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Portfolio Section -->
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Contact</h2>
+                <p>If you're interested in working together, feel free to reach out!</p>
+            </div><!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row gy-4">
+
+
+
+                    <div class="col-lg-12">
+                        <form id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                            <!-- To simplify the tutorial, the value is static. -->
+                            <input type="hidden" name="time" value="Mar 10 2025 08:46">
+
+
+                            <div class="row gy-4">
+
+                                <div class="col-md-6">
+                                    <label class="pb-2">Name</label>
+                                    <input class="form-control" type="text" name="name" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="pb-2">Email</label>
+                                    <input class="form-control" type="email" name="email" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="pb-2">Subject</label>
+                                    <input class="form-control" type="text" name="title" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="pb-2">Message</label>
+                                    <textarea class="form-control" name="message" required></textarea>
+                                </div>
+                                <div class="col-md-3">
+                                    <input class="btn btn-success" type="submit" value="Send">
+                                </div>
+                               
+
+                            </div>
+</form>
+                        <!--<form id="contact-form">
+        <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
         </div>
-        
-        <div class="section">
-            <h2>Experience</h2>
-            <ul>
-                <li><strong>BairesDev (Jul 2022 - Present)</strong> - Software Engineer</li>
-                <li><strong>StateTrust Life and Annuities (May 2015 - Jul 2022)</strong> - Senior Software Developer</li>
-                <li><strong>DA Sistemas Integrados (Jan 2014 - Apr 2015)</strong> - Full Stack Web Developer</li>
-                <li><strong>DIMSA Software (Oct 2011 - Nov 2014)</strong> - Software Engineer</li>
-            </ul>
+        <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
         </div>
-        
-        <div class="section">
-            <h2>Skills</h2>
-            <ul>
-                <li>C#, ASP.NET Core, ASP.NET MVC, Blazor</li>
-                <li>Angular 2+, TypeScript, JavaScript, HTML, CSS, Bootstrap</li>
-                <li>SQL Server, PL/SQL (Oracle), Entity Framework</li>
-                <li>Microsoft Azure, Azure DevOps, Azure Functions</li>
-                <li>REST APIs, Web Services, SSRS, SSIS, Crystal Reports</li>
-                <li>Unit Testing, NUnit, Rhino Mocks</li>
-            </ul>
+        <div class="mb-3">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" class="form-control" id="subject" name="subject" required>
         </div>
-        
-        <div class="section">
-            <h2>Education</h2>
-            <ul>
-                <li>APEC University - System Engineer (2011)</li>
-                <li>ITLA - Diplomat in Web Solutions (2013)</li>
-                <li>APEC University - Diplomat in Administration and Programming of Databases (2017)</li>
-            </ul>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
         </div>
-        
-        <div class="section contact">
-            <h2>Contact</h2>
-            <p>📞 <a href="tel:+18493432980">(1) 849-343-2980</a></p>
-            <p>✉️ <a href="mailto:mvasquezrd@outlook.com">mvasquezrd@outlook.com</a></p>
-            <p>📍 Santo Domingo de Guzmán, Distrito Nacional, Dominican Republic</p>
-            <p>🔗 <a href="https://www.linkedin.com/in/misael-vasquez-b8724a169/" target="_blank">LinkedIn Profile</a></p>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+    <p id="response-message" class="mt-3"></p>-->
+                       
+                    
+                    
+                    
+                    
+                    <!--<form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+      <div class="row gy-4">
+
+        <div class="col-md-6">
+          <label for="name-field" class="pb-2">Your Name</label>
+          <input type="text" name="name" id="name-field" class="form-control" required="">
         </div>
-    </div>
+
+        <div class="col-md-6">
+          <label for="email-field" class="pb-2">Your Email</label>
+          <input type="email" class="form-control" name="email" id="email-field" required="">
+        </div>
+
+        <div class="col-md-12">
+          <label for="subject-field" class="pb-2">Subject</label>
+          <input type="text" class="form-control" name="subject" id="subject-field" required="">
+        </div>
+
+        <div class="col-md-12">
+          <label for="message-field" class="pb-2">Message</label>
+          <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+        </div>
+
+        <div class="col-md-12 text-center">
+          <div class="loading">Loading</div>
+          <div class="error-message"></div>
+          <div class="sent-message">Your message has been sent. Thank you!</div>
+
+          <button type="submit">Send Message</button>
+        </div>
+
+      </div>
+    </form>-->
+
+
+
+
+                    </div><!-- End Contact Form -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Contact Section -->
+
+    </main>
+
+    <footer id="footer" class="footer position-relative light-background">
+
+        <div class="container">
+            <div class="copyright text-center ">
+                <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+            </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you've purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
